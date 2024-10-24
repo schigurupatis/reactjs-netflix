@@ -140,6 +140,7 @@ const Login = () => {
             New User {updateProfile.user.displayName} Added Successfully.
           </div>
         )} */}
+        <h1>testing firebase</h1>
         <form
           onSubmit={(e) => e.preventDefault()}
           className="bg-black opacity-90 p-12 rounded-md w-[400px] mx-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
