@@ -52,8 +52,8 @@ const Header = () => {
   };
 
   return (
-    <header className="absolute w-full bg-gradient-to-b from-black h-[120px]">
-      <div className="container w-[1024px] mx-auto h-24 flex justify-between items-center">
+    <header className="absolute w-full bg-gradient-to-b from-black h-[120px] z-10">
+      <div className="container w-[1200px] mx-auto h-24 flex justify-between items-center">
         <Link to="/">
           <img src={logo} alt="Netflix" className="w-36 h-10 object-contain" />
         </Link>
@@ -65,7 +65,7 @@ const Header = () => {
                 alt="User"
                 className="w-8 h-8 rounded-full"
               />
-              <span>Welcome, {user?.displayName}</span>
+              <span className="text-white">Welcome, {user?.displayName}</span>
             </div>
           ) : (
             <>

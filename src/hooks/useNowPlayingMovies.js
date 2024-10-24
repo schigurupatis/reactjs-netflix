@@ -13,13 +13,13 @@ const useNowPlayingMovies = () => {
   );
 
   const getNowPlayingMovies = async () => {
-    const response = await fetch(
-      "https://api.themoviedb.org/3/movie/now_playing?language=en-US",
+    const data = await fetch(
+      "https://api.themoviedb.org/3/movie/now_playing?page=1",
       API_OPTIONS
     );
-    const data = await response.json();
-    console.log("Results are: ", data.results);
-    dispatch(addNowPlayingMovies(data.results));
+    const json = await data.json();
+    //console.log("Results are: ", json.results);
+    dispatch(addNowPlayingMovies(json.results));
   };
 
   useEffect(() => {

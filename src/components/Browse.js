@@ -4,14 +4,14 @@ import Footer from "./Footer";
 import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
 import VideoContainer from "./VideoContainer";
 import MainContainer from "./MainContainer";
-import { useSelector } from "react-redux";
 
 const Browse = () => {
   // const nowPlayingMovies = useSelector(store => store.movies.nowPlayingMovies);
-  // if(nowPlayingMovies === null) return;
-  // const movie = nowPlayingMovies[0];
+  
 
   useNowPlayingMovies();
+
+  
 
   return (
     <>
@@ -30,8 +30,11 @@ const Browse = () => {
 
         <VideoContainer />
         <MainContainer />
-        {/* {nowPlayingMovies && movie.title} */}
+        {/* {nowPlayingMovies && movie.title}  */}
         {/* {movie.title} */}
+
+
+        
         <Footer />
       </div>
     </>
