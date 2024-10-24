@@ -4,7 +4,7 @@ const VideoTitle = ({title, overview}) => {
   //console.log("title are:", title)
   return (
     <div className='absolute w-screen aspect-video text-white bg-gradient-to-r from-black'>
-    <div className='pt-[20%] wrapper w-[1200px] mx-auto'>
+    <div className='pt-[15%] wrapper w-[1200px] mx-auto'>
       <h1 className='text-5xl font-bold mb-4'>{title}</h1>
       <p className='text-lg py-4 w-1/3'>{overview}</p>
       <div className='mt-4'>

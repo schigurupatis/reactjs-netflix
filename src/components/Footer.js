@@ -4,17 +4,8 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white">
       <div className="w-[1200px] mx-auto h-24 flex justify-between items-center">
-        <h6>Questions? Call 000-800-919-1694</h6>
-        <div className="flex gap-6">
-          <ul className="flex gap-6">
-            <li>FAQ</li>
-            <li>Help Center</li>
-            <li>Terms of Use</li>
-            <li>Privacy</li>
-            <li>Cookie Preferences</li>
-            <li>Corporate Information</li>
-          </ul>
-        </div>
+        <p className="m-0">Created for Educational Purpose Only</p>
+        <p className="m-0">Designed & Developed by <a className="text-red-600" href="https://github.com/schigurupatis">Santha Kumar Chigurupati</a></p>
       </div>
     </footer>
   );

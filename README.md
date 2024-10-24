@@ -22,6 +22,7 @@
 - Unsubscribe to the onAuthStateChange callback
 - Register TMDB API & Create an app and got access token
 - Get data from TMDB "Now Playing" movies List API
+- Fetching Trailer video and stored in movieslice dynamically
 
 # Features
 
