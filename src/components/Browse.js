@@ -4,12 +4,18 @@ import Footer from "./Footer";
 import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
 import VideoContainer from "./VideoContainer";
 import MainContainer from "./MainContainer";
+import usePopularMovies from "../hooks/usePopularMovies";
+import useTopRatedMovies from "../hooks/useTopRatedMovies";
+import useUpComingMovies from "../hooks/useUpComingMovies";
 
 const Browse = () => {
   // const nowPlayingMovies = useSelector(store => store.movies.nowPlayingMovies);
   
 
   useNowPlayingMovies();
+  usePopularMovies();
+  useTopRatedMovies()
+  useUpComingMovies()
 
   
 
