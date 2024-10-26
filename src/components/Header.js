@@ -5,7 +5,7 @@ import { auth } from "../utils/firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { useNavigate, Link } from "react-router-dom";
-import { logo } from "../utils/constants";
+import { logo, SUPPORTED_LANGUAGES } from "../utils/constants";
 import { togggleGptSearchView } from "../utils/gptSlice";
 
 const Header = () => {
@@ -66,6 +66,13 @@ const Header = () => {
         <div className="flex justify-end items-center gap-3">
           {user?.email ? (
             <div className="flex justify-start items-start gap-3">
+                <select className="bg-gray-800 text-white px-4 py-1 rounded-md cursor-pointer">
+                  {/* <option value="en">English</option>
+                  <option value="hindi">Hindi</option>
+                  <option value="telugu">Telugu</option>
+                  <option value="kannada">Kannada</option> */}
+                  {SUPPORTED_LANGUAGES.map((lang) => <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>)}
+                </select>
               <button className="bg-red-900 text-white px-4 py-1 rounded-md" onClick={handleGPTSearch}>GPT Search</button>
               <img
                 src={user?.photoURL}
@@ -75,14 +82,7 @@ const Header = () => {
               <span className="text-white">Welcome, {user?.displayName}</span>
             </div>
           ) : (
-            <>
-              <form>
-                <select className="bg-gray-800 text-white px-4 py-1 rounded-md cursor-pointer">
-                  <option>English</option>
-                  <option>Spanish</option>
-                </select>
-              </form>
-            </>
+            ""
           )}
           <button
             className="bg-red-600 text-white px-4 py-1 rounded-md"
