@@ -23,6 +23,11 @@
 - Register TMDB API & Create an app and got access token
 - Get data from TMDB "Now Playing" movies List API
 - Fetching Trailer video and stored in movieslice dynamically
+- Movies List
+- Movies Card
+- All Movies
+- GPT Search
+-
 
 # Features
 
@@ -36,6 +41,11 @@
   - Movie Title & Description
   - Movies Suggestions
     - Movie Lists
+    - Movie Card
+  - Popular Movies
+  - Latest Movies
+  - UpComing Movies
+  - Now Playing Movies
 - Netflix GPT
   - Searchbar
   - Movie Suggestions

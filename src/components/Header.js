@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { useNavigate, Link } from "react-router-dom";
 import { logo } from "../utils/constants";
+import { togggleGptSearchView } from "../utils/gptSlice";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -51,6 +52,11 @@ const Header = () => {
       });
   };
 
+  const handleGPTSearch = () => {
+    // Toggle GPT Search Button
+    dispatch(togggleGptSearchView())
+  }
+
   return (
     <header className="absolute w-full bg-gradient-to-b from-black h-[120px] z-10">
       <div className="container w-[1200px] mx-auto h-24 flex justify-between items-center">
@@ -60,6 +66,7 @@ const Header = () => {
         <div className="flex justify-end items-center gap-3">
           {user?.email ? (
             <div className="flex justify-start items-start gap-3">
+              <button className="bg-red-900 text-white px-4 py-1 rounded-md" onClick={handleGPTSearch}>GPT Search</button>
               <img
                 src={user?.photoURL}
                 alt="User"
