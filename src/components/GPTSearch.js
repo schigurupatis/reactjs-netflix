@@ -4,6 +4,8 @@ import GPTMovieSuggestions from './GPTMovieSuggestions'
 import { LOGIN_BG } from '../utils/constants'
 
 const GPTSearch = () => {
+
+    
     
   return (
     <div style={{backgroundImage: `url(${LOGIN_BG})`}} className='h-screen w-screen'>

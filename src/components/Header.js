@@ -7,11 +7,13 @@ import { addUser, removeUser } from "../utils/userSlice";
 import { useNavigate, Link } from "react-router-dom";
 import { logo, SUPPORTED_LANGUAGES } from "../utils/constants";
 import { togggleGptSearchView } from "../utils/gptSlice";
+import { changeLanguage } from "../utils/configSlice";
 
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
+  const showGptSearch = useSelector(store => store.gpt.showGptSearch)
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -57,6 +59,12 @@ const Header = () => {
     dispatch(togggleGptSearchView())
   }
 
+  const handleLanguageChange = (e) => {
+    // Change Language
+    //console.log(e.target.value)
+    dispatch(changeLanguage(e.target.value))
+  }
+
   return (
     <header className="absolute w-full bg-gradient-to-b from-black h-[120px] z-10">
       <div className="container w-[1200px] mx-auto h-24 flex justify-between items-center">
@@ -66,14 +74,14 @@ const Header = () => {
         <div className="flex justify-end items-center gap-3">
           {user?.email ? (
             <div className="flex justify-start items-start gap-3">
-                <select className="bg-gray-800 text-white px-4 py-1 rounded-md cursor-pointer">
+                {showGptSearch && <select className="bg-gray-800 text-white px-4 py-1 rounded-md cursor-pointer" onChange={handleLanguageChange}>
                   {/* <option value="en">English</option>
                   <option value="hindi">Hindi</option>
                   <option value="telugu">Telugu</option>
                   <option value="kannada">Kannada</option> */}
                   {SUPPORTED_LANGUAGES.map((lang) => <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>)}
-                </select>
-              <button className="bg-red-900 text-white px-4 py-1 rounded-md" onClick={handleGPTSearch}>GPT Search</button>
+                </select>}
+              <button className="bg-red-900 text-white px-4 py-1 rounded-md" onClick={handleGPTSearch}>{showGptSearch ? "Home" : "GPT Search"}</button>
               <img
                 src={user?.photoURL}
                 alt="User"
